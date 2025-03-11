@@ -88,7 +88,14 @@ npx prisma migrate deploy
 3. Start the application by running the following command:
 
 ```bash
-npm start
+npm run dev
+```
+
+OR
+
+```bash
+npm run build
+npm run start
 ```
 
 This will start the application and make it accessible at `http://localhost:3000`.
