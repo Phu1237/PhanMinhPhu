@@ -60,7 +60,7 @@ graph TD
     B --> C[Check cache for scoreboard]
     C --> D{Cache hit?}
     D -- Yes --> E[Return cached scoreboard data]
-    D -- No --> F[Fetch top 10 scores from database]
+    D -- No --> F[Fetch scores from database]
     F --> G[Update cache with new scoreboard data]
     G --> H[Return scoreboard data]
     H --> I[Display scoreboard on client]
@@ -140,6 +140,8 @@ graph TD
 
 ## Improvements
 
-1. **Monitoring**: Add monitoring and logging to detect and prevent fraudulent activities.
-2. **Testing**: Implement unit and integration tests for the API endpoints.
-3. **Documentation**: Enhance API documentation with more examples and edge cases.
+1. **Real-Time Notifications**: Notify users instantly when someone overtakes another in the top 10
+2. **Achievements System**: Implement an achievements system to reward users for reaching specific score milestones.
+3. **Point Contention**: Enable users to "steal" or "win" points from others by completing specific challenges or outscoring them in a head-to-head contest.
+4. **Referral System**: Reward users for inviting new players who join and perform actions, encouraging organic growth.
+5. **Friend-Based Leaderboard**: Allow users to view a separate leaderboard of their friends's scores for a more social experience.
