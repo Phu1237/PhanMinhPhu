@@ -2,76 +2,46 @@
 
 ## Task
 
-Develop a backend server with ExpressJS. You are required to build a set of CRUD interface that allow a user to interact with the service. You are required to use TypeScript for this task.
+Provide 3 unique implementations of the following function in TypeScript.
 
-1. Interface functionalities:
-    1. Create a resource.
-    2. List resources with basic filters.
-    3. Get details of a resource.
-    4. Update resource details.
-    5. Delete a resource.
-2. You should connect your backend service with a simple database for data persistence.
-3. Provide `README.md` for the configuration and the way to run application.
+- Comment on the complexity or efficiency of each function.
 
-## API Endpoints
+**Input**: `n` - any integer
 
-This project provides the following API endpoints:
+*Assuming this input will always produce a result lesser than `Number.MAX_SAFE_INTEGER`*.
 
-- `GET /customers`: Retrieves a list of all customers.
-- `GET /customers/{id}`: Retrieves a specific customer by ID.
-- `POST /customers`: Creates a new customer.
-- `PUT /customers/{id}`: Updates an existing customer.
-- `DELETE /customers/{id}`: Deletes a customer.
+**Output**: `return` - summation to `n`, i.e. `sum_to_n(5) === 1 + 2 + 3 + 4 + 5 === 15`.
 
-### API Parameters and Query Options
+## Solutions
 
-#### `GET /customers`
-- **Query Parameters:**
-  - `name` (optional): The name of the customer to filter by.
+### Solution 1
 
-#### `GET /customers/{id}`
-- **Path Parameters:**
-  - `id` (required): The ID of the customer to retrieve.
+This function uses a loop to sum all numbers from 1 to n.
 
-#### `POST /customers`
-- **Body Parameters:**
-  - `name` (required): The name of the customer.
+- Time Complexity: O(n) - The loop runs `n` times.
+- Space Complexity: O(1) - Uses a constant amount of space.
 
-#### `PUT /customers/{id}`
-- **Path Parameters:**
-  - `id` (required): The ID of the customer to update.
-- **Body Parameters:**
-  - `name` (required): The new name of the customer.
+### Solution 2
 
-#### `DELETE /customers/{id}`
-- **Path Parameters:**
-  - `id` (required): The ID of the customer to delete.
+Use the mathematical formula for the sum of the first n natural numbers.
 
-## Configuration
+- Time Complexity: O(1) - Calculation is done in constant time.
+- Space Complexity: O(1) - Uses a constant amount of space
 
-This project uses a `.env` file for configuration. Make sure to create a `.env` file in the root directory of the project with the following configuration:
+### Solution 3
 
-```
-PORT=3000
+This function uses recursion to sum all numbers from 1 to n.
 
-DB_HOST=localhost
-DB_PORT=5432
-DB_SCHEMA=public
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=
-POSTGRES_DB=
-```
+- Time Complexity: O(n) - There are `n` recursive calls.
+- Space Complexity: O(n) - Each call adds a new frame to the call stack.
 
-Replace your database information in the `.env` file.
+## How to run
 
-## How to Run
-
-Before running this project, make sure you have the following prerequisites:
+Before running the Problem 4 solution, make sure you have the following prerequisites:
 
 - Node.js installed on your machine.
-- PostgreSQL database set up and running.
 
-To run this project, follow these steps:
+Steps:
 
 1. Install the necessary dependencies by running the following command in the terminal:
 
@@ -79,23 +49,8 @@ To run this project, follow these steps:
 npm install
 ```
 
-2. Run database migrations using Prisma by running the following command:
+2. Run the solution by running the following command in the terminal:
 
 ```bash
-npx prisma migrate deploy
+npm run test
 ```
-
-3. Start the application by running the following command:
-
-```bash
-npm run dev
-```
-
-OR
-
-```bash
-npm run build
-npm run start
-```
-
-This will start the application and make it accessible at `http://localhost:3000`.
